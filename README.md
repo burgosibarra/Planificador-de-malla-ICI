@@ -21,6 +21,7 @@ Paso 2.2: Abre tu "Terminal" o "Comandos del sistema"
 Para MAC: https://es.wikihow.com/abrir-una-ventana-de-%22Terminal%22-en-Mac
 Para Windows: https://es.wikihow.com/abrir-la-l%C3%ADnea-de-comandos-en-Windows
 
-Paso 2.3: Installa PyQt5, para ello debes escribir ´´´pip3 install pyqt5´´´
+Paso 2.3: Installa PyQt5
+Para ello debes escribir ´´´pip3 install pyqt5´´´
 *Nota*: si no funciona intenta ´´´pip install pyqt5´´´
 -------
