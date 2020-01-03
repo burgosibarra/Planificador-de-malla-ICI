@@ -1,0 +1,83 @@
+{
+    "1": {
+        "QUI010": "disponible",
+        "MAT021": "disponible",
+        "FIS100": "disponible",
+        "IWG101": "disponible",
+        "DEW100": "disponible"
+    },
+    "2": {
+        "IWI131": "disponible",
+        "FIS110": "no disponible",
+        "HRW1": "disponible",
+        "DEW101": "no disponible",
+        "MAT022": "no disponible"
+    },
+    "3": {
+        "MAT023": "no disponible",
+        "FIS120": "no disponible",
+        "ILN010": "disponible",
+        "ILM152": "no disponible",
+        "QUI025": "no disponible"
+    },
+    "4": {
+        "MAT024": "no disponible",
+        "FIS130": "no disponible",
+        "ILN011": "no disponible",
+        "ILI271": "no disponible",
+        "IRW2": "disponible",
+        "HCW100": "disponible"
+    },
+    "5": {
+        "ICN262": "disponible",
+        "ILN012": "disponible",
+        "ILN255": "no disponible",
+        "IWT001": "disponible",
+        "ILN210": "no disponible",
+        "DEW0": "no disponible"
+    },
+    "6": {
+        "IWN270": "no disponible",
+        "ICN324": "no disponible",
+        "ILN221": "no disponible",
+        "ILN211": "no disponible",
+        "IWM185": "no disponible",
+        "HCW101": "no disponible"
+    },
+    "7": {
+        "FIS140": "no disponible",
+        "MAT042": "no disponible",
+        "ILN222": "no disponible",
+        "ICN323": "no disponible",
+        "ILN230": "no disponible"
+    },
+    "8": {
+        "ICN312": "no disponible",
+        "ICN212": "no disponible",
+        "ILN250": "no disponible",
+        "ICN292": "no disponible",
+        "ICN342": "no disponible"
+    },
+    "9": {
+        "ICN320": "no disponible",
+        "ICN321": "no disponible",
+        "ICN346": "no disponible",
+        "ICN011": "disponible",
+        "ICN343": "no disponible",
+        "HRW3": "disponible"
+    },
+    "10": {
+        "ICN338": "no disponible",
+        "ICN012": "disponible",
+        "ICN322": "no disponible",
+        "HRW4": "disponible",
+        "ICN344": "no disponible",
+        "ICN398": "no disponible"
+    },
+    "11": {
+        "ICN337": "no disponible",
+        "ICN013": "disponible",
+        "ICN014": "disponible",
+        "ICN399": "no disponible"
+    }
+}
