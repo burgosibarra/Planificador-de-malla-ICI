@@ -8,8 +8,9 @@ Haz click en ```Clone or download``` y luego en ```Download ZIP```
 
 ### Paso 2, opción 1 (Solo para Windows):
 * Descomprime el archivo descargado y elimina todo menos la carpeta ```Planificador```
-* Abres la carpeta y haz click en el archivo ```main.exe``` (o solo ```main```) y listo!
+* Abres la carpeta y haz click en el archivo ```Planificador.exe``` (o solo ```Planificador```) y listo!
 * **Nota**: Puedes crear un acceso directo de este archivo (haciendo click derecho sobre este) y ubicar este ```main.exe - Acceso directo``` donde tu quieras
+![](Download_manual_1-1.PNG "Nota")
 
 ### Paso 2, opción 2 (Válido para cualquier usuario, advertencia: es un poco complejo pero no imposible):
 * Paso 2.1: Installa Python 3.7.x (puede ser 3.7.1, 3.7.2, etc.), para ello puedes visitar https://www.python.org/downloads/release/python-374
@@ -24,4 +25,7 @@ Haz click en ```Clone or download``` y luego en ```Download ZIP```
 * Paso 2.3: Installa PyQt5
     * Para ello debes escribir ```pip3 install pyqt5```
     * **Nota**: si no funciona intenta ```pip install pyqt5```
+
+* Paso 2.4: Descomprime el archivo descargado y elimina todo menos la carpeta ```Programa en Python```
+    * Abre el archivo ```main.py``` y ejecutalo
 -------
