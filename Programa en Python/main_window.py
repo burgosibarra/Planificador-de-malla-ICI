@@ -4,10 +4,12 @@ from PyQt5.QtCore import pyqtSignal, QSize
 from central_window import CentralWindow
 from help_window import HelpWindow
 from about_window import AboutWindow
+from convalidate_window import ConvalidateWindow
 from parameters import (path_logo, path_book, path_exit,
                         main_window_x_pos, main_window_y_pos,
                         window_height, window_width,
-                        path_plus, path_minus, path_question)
+                        path_plus, path_minus, path_question,
+                        path_check_mark)
 
 
 class MainWindow(QMainWindow):
@@ -15,6 +17,7 @@ class MainWindow(QMainWindow):
     process_add_remove_semester = pyqtSignal(str)
     process_semester_update = pyqtSignal(str)
     process_subject_state_update = pyqtSignal(str)
+    process_subject_convalidation = pyqtSignal(str)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -52,6 +55,11 @@ class MainWindow(QMainWindow):
         exit_action.setStatusTip('Exit application')
         exit_action.triggered.connect(QApplication.quit)
 
+        convalidate_action = QAction(QIcon(path_check_mark),
+                                     '&Convalidar', self)
+        convalidate_action.setStatusTip('Convalidar ramos')
+        convalidate_action.triggered.connect(self.raise_convalidate_window)
+
         add_semester = QAction(QIcon(path_plus),
                                '&Agregar Semestre',
                                self)
@@ -74,6 +82,7 @@ class MainWindow(QMainWindow):
 
         menubar = self.menuBar()
         archivo_menu = menubar.addMenu('&Opciones')
+        archivo_menu.addAction(convalidate_action)
         archivo_menu.addAction(about_section)
         archivo_menu.addAction(exit_action)
 
@@ -97,6 +106,11 @@ class MainWindow(QMainWindow):
         self.about_window = AboutWindow()
         self.about_window.show()
 
+    def raise_convalidate_window(self):
+        self.convalidate_window = ConvalidateWindow()
+        self.convalidate_window.send_convalidation_to_main_window.connect(
+            self.receive_subject_convalidation)
+
     def raise_help_window(self):
         self.help_window = HelpWindow()
         self.help_window.show()
@@ -107,8 +121,14 @@ class MainWindow(QMainWindow):
     def receive_subject_state_update(self, string):
         self.process_subject_state_update.emit(string)
 
+    def receive_subject_convalidation(self, subject):
+        self.process_subject_convalidation.emit(subject)
+
     def update_planner(self, string):
         self.central_window.update(string)
+
+    def update_convalidate_window(self, message):
+        self.convalidate_window.setMessage(message)
 
     def add_semester(self):
         self.process_add_remove_semester.emit('true')

@@ -8,6 +8,7 @@ class Processor(QObject):
 
     update_central_window = pyqtSignal(str)
     update_status_bar = pyqtSignal(str)
+    update_convalidation_window = pyqtSignal(str)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -68,7 +69,8 @@ class Processor(QObject):
             dictionary["instruccion"] = "descursar ramo"
         with open(path_planner, "w") as document:
             json.dump(planner, document, indent=4)
-        if not dictionary["estado"] == "no disponible":
+        if not (dictionary["estado"] == "no disponible" or
+                dictionary["estado"] == "convalidado"):
             self.evaluate_requirement(dictionary)
             self.update()
         return None
@@ -104,13 +106,14 @@ class Processor(QObject):
         approved_subjects = set({""})
         for semesters in planner:
             for codes in planner[semesters]:
-                if planner[semesters][codes] == "cursado":
+                if (planner[semesters][codes] == "cursado" or
+                    planner[semesters][codes] == "convalidado"):
                     approved_subjects.add(codes)
         if dictionary["instruccion"] == "cursar ramo":
             for semester in range(int(dictionary["semestre actual"]),
                                   len(planner) + 1):
                 for codes in planner[str(semester)]:
-                    if planner[str(semester)][codes] != "cursado":
+                    if planner[str(semester)][codes] == "no disponible":
                         requirements = set(subjects[codes]["requisitos"])
                         if requirements <= approved_subjects:
                             planner[str(semester)][codes] = "disponible"
@@ -123,8 +126,10 @@ class Processor(QObject):
                     key=lambda subject: int(subjects[subject]["codigo"])
                 )
                 for codes in semester_subjects:
-                    if not set(subjects[codes]["requisitos"]) <= \
-                            approved_subjects:
+                    bool_1 = not (set(subjects[codes]["requisitos"]) <= \
+                                  approved_subjects)
+                    bool_2 = planner[str(semester)][codes] != "convalidado"
+                    if bool_1 and bool_2:
                         if codes in approved_subjects:
                             approved_subjects.remove(codes)
                         planner[str(semester)][codes] = "no disponible"
@@ -152,4 +157,36 @@ class Processor(QObject):
         with open(path_planner, "w") as document:
             json.dump(planner, document, indent=4)
 
+        self.update()
+
+    def convalidate_subject(self, subject):
+        subject = subject.upper()
+        message = ""
+
+        with open(path_planner, "r") as document:
+            planner = json.load(document)
+
+        for semesters in planner:
+            if subject in planner[semesters]:
+                if planner[semesters][subject] != "convalidado":
+                    planner[semesters][subject] = "convalidado"
+                    message = "Se ha convalidado el ramo"
+                    dictionary = {"instruccion": "cursar ramo"}
+                elif planner[semesters][subject] == "convalidado":
+                    planner[semesters][subject] = "no disponible"
+                    message = "Se ha des-convalidado el ramo"
+                    dictionary = {"instruccion": "descursar ramo"}
+                self.update_convalidation_window.emit(message)
+                break
+
+        if message == "":
+            message = "No se ha encontrado el ramo"
+            self.update_convalidation_window.emit(message)
+            return None
+
+        with open(path_planner, "w") as document:
+            json.dump(planner, document, indent=4)
+
+        dictionary["semestre actual"] = "1"
+        self.evaluate_requirement(dictionary)
         self.update()

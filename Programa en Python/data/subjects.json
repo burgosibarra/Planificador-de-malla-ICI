@@ -28,7 +28,7 @@
     "DEW0": {"nombre": "DEPORTES", "codigo": "5", "requisitos": ["DEW101"], "creditos": "1"},
     "IWN270": {"nombre": "INFORMACION Y CONTROL FINANCIERO", "codigo": "6", "requisitos": ["ICN262"], "creditos": "3"},
     "ICN324": {"nombre": "LEGISLACION EMPRESARIAL", "codigo": "6", "requisitos": ["ICN262"], "creditos": "3"},
-    "ILN221": {"nombre": "GESTION ENERGETICA I", "codigo": "6", "requisitos": ["IWQ111"], "creditos": "4"},
+    "ILN221": {"nombre": "GESTION ENERGETICA I", "codigo": "6", "requisitos": ["IWT001"], "creditos": "4"},
     "ILN211": {"nombre": "MACROECONOMIA", "codigo": "6", "requisitos": ["ILN210"], "creditos": "3"},
     "IWM185": {"nombre": "GRAFICA A LA INGENIERIA", "codigo": "6", "requisitos": ["IWI131"], "creditos": "3"},
     "HCW101": {"nombre": "INGLES II", "codigo": "6", "requisitos": ["HCW100"], "creditos": "2"},

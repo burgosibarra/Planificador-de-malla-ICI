@@ -1,10 +1,10 @@
 {
     "1": {
         "QUI010": "disponible",
-        "MAT021": "disponible",
         "FIS100": "disponible",
         "IWG101": "disponible",
-        "DEW100": "disponible"
+        "DEW100": "disponible",
+        "MAT021": "disponible"
     },
     "2": {
         "IWI131": "disponible",

@@ -5,7 +5,8 @@ from PyQt5.QtCore import (pyqtSignal, QSize, QRect,
 from parameters import (path_subject, subject_width,
                         path_available_subject, path_unavailable_subject,
                         path_approved_subject,
-                        path_square)
+                        path_square,
+                        path_convalidate_subject)
 import json
 
 
@@ -60,6 +61,9 @@ class Block(QLabel):
         elif self.state == "cursado":
             image = QPixmap(path_approved_subject).scaled(subject_width,
                                                           self.height)
+        elif self.state == "convalidado":
+            image = QPixmap(path_convalidate_subject).scaled(subject_width,
+                                                             self.height)
 
         painter = QPainter(image)
 

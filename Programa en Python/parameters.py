@@ -3,6 +3,7 @@ from os import path
 path_available_subject = path.join("images", "disponible.png")
 path_unavailable_subject = path.join("images", "no_disponible.png")
 path_approved_subject = path.join("images", "cursado.png")
+path_convalidate_subject = path.join("images", "convalidado.png")
 
 path_semester = path.join("images", "semestre.png")
 path_semester_21 = path.join("images", "semestre_21.png")
@@ -19,6 +20,7 @@ path_plus = path.join("images", "plus.png")
 path_minus = path.join("images", "minus.png")
 path_question = path.join("images", "question_mark.png")
 path_help = path.join("images", "instrucciones.png")
+path_check_mark = path.join("images", "check.png")
 
 path_subject = path.join("data", "subjects.json")
 
@@ -51,3 +53,6 @@ semester_height_scale = 0.9
 
 help_width = 760
 help_height = 520
+
+convalidate_width = 500
+convalidate_height = 200

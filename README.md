@@ -12,7 +12,13 @@ Haz click en ```Clone or download``` y luego en ```Download ZIP```
 * **Nota**: Puedes crear un acceso directo de este archivo (haciendo click derecho sobre este) y ubicar este ```main.exe - Acceso directo``` donde tu quieras
 ![](Download_manual_1-1.PNG "Nota")
 
-### Paso 2, opción 2 (Válido para cualquier usuario, advertencia: es un poco complejo pero no imposible):
+### Paso 2, opción 2 (Solo para macOS):
+* Descomprime el archivo descargado y elimina todo menos la carpeta ```Planificador```
+* Abres la carpeta y haz click en el archivo ```Planificador.exe``` (o solo ```Planificador```) y listo!
+* **Nota**: Puedes crear un acceso directo de este archivo (haciendo click derecho sobre este) y ubicar este ```main.exe - Acceso directo``` donde tu quieras
+![](Download_manual_1-1.PNG "Nota")
+
+### Paso 2, opción 3 (Válido para cualquier usuario, advertencia: es un poco complejo pero no imposible):
 * Paso 2.1: Installa Python 3.7.x (puede ser 3.7.1, 3.7.2, etc.), para ello puedes visitar https://www.python.org/downloads/release/python-374
     * **Importante**: Cerca del final de la instalación debes clickear el checkbox que dice Add Python 3.7 to PATH
 ![](Download_manual_2.PNG "Paso 2.1")
